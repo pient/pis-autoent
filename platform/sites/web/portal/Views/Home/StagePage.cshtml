@@ -1,0 +1,61 @@
+﻿@model PageModel
+
+@{
+}
+
+@section head{
+    <style type="text/css">
+
+        .x-column-layout-ct .x-panel {
+            margin-bottom:5px;
+        }
+
+        .x-column-layout-ct .x-panel-dd-spacer {
+            margin-bottom:5px;
+        }
+    </style>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            var pageCode = '@Model.PageCode';
+
+            PISConfig.Init();
+
+            Ext.Ajax.request({
+                url: PISConfig.PageDataPath + '?code=' + pageCode,
+                params: {},
+                success: function (response, opts) {
+                    var pageData = Ext.decode(response.responseText);
+                    var path = pageData.Path;
+                    var pathType = pageData.Type || "Auto";
+
+                    if (path) {
+                        
+                        if ('Auto' == pathType) {
+                            if (path.indexOf('/') >= 0 || path.indexOf('\\') >= 0) {
+                                pathType = 'Url'
+                            } else {
+                                pathType = 'View';
+                            }
+                        }
+
+                        if ('View' === pathType) {
+                            var view = 'PIS.' + path;
+                            Ext.require(view);
+
+                            Ext.create(view, { pageData: pageData });
+                        } else if ('Url' === pathType) {
+                            window.location.href = path;
+                        }
+                    }
+                },
+                failure: function (response, opts) {
+                    PISMsgBox.
+                    alert('请求失败,错误代码：' + response.status)
+                }
+            });
+        });
+    </script>
+}

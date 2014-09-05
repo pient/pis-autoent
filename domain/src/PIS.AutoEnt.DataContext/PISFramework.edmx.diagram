@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7e68c02ff8e74c9e8b265acbb9463f81" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.OrgFunction" Width="1.5" PointX="9" PointY="15.625" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.OrgGroup" Width="1.5" PointX="1.875" PointY="16.875" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.OrgRole" Width="1.5" PointX="3.75" PointY="12" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.OrgUser" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysFile" Width="1.5" PointX="13.125" PointY="5.625" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysFolder" Width="1.5" PointX="8.25" PointY="5.375" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysMessage" Width="1.5" PointX="10.75" PointY="5.375" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysMetadata" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysModule" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysObject" Width="1.5" PointX="8" PointY="0.625" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.OrgGroupFunction" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.OrgRoleFunction" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.OrgUserGroup" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.OrgUserRole" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysRegistry" Width="1.5" PointX="5.5" PointY="5.5" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysDataStructure" Width="1.5" PointX="4.25" PointY="0.5" />
+        <EntityTypeShape EntityType="PisBJXZ_FrameworkModel.SysAuth" Width="1.5" PointX="7.125" PointY="10.625" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.OrgUserAuth" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.OrgGroupAuth" />
+        <AssociationConnector Association="PisBJXZ_FrameworkModel.OrgRoleAuth" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

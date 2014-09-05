@@ -1,0 +1,2 @@
+﻿// 获取Assembly公钥
+sn -Tp MyAssembly.dll

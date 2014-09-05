@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="registry"
+    targetNamespace="http://www.pissoft.com/SysRegistry.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.pissoft.com/SysRegistry.xsd"
+    xmlns:mstns="http://www.pissoft.com/SysRegistry.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="registry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="portal" />
+        <xs:element ref="enumerations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="portal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="portalmenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="portalmenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="menuitems" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="menuitems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="menuitem" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="menuitem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Id" type="xs:ID" />
+        <xs:element name="Code" type="xs:string" />
+        <xs:element name="Name" type="xs:string" />
+        <xs:element name="Title" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element ref="menuitems" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="enumerations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="enumeration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="enumeration">
+    <xs:complexType>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

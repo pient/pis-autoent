@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78709905-1F11-4C29-9889-7F75D254E0AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS.AutoEnt</RootNamespace>
+    <AssemblyName>PIS.AutoEnt.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\..\..\..\..\Products\AutoEnt\Workspace\Src\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Products\AutoEnt\Workspace\Src\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConfigs\AppModuleInitializer.cs" />
+    <Compile Include="AppConfigs\AppInitializer.cs" />
+    <Compile Include="AppConfigs\AppMapperConfig.cs" />
+    <Compile Include="App\Registry\AppRegistry.cs" />
+    <Compile Include="App\Registry\IRegDataObject.cs" />
+    <Compile Include="App\Registry\RegDataItem.cs" />
+    <Compile Include="App\Registry\RegDataNode.cs" />
+    <Compile Include="App\Registry\RegDataRegion.cs" />
+    <Compile Include="App\Registry\RegDataSet.cs" />
+    <Compile Include="App\Registry\RegDataStore.cs" />
+    <Compile Include="App\Registry\SysRegDataRegion.cs" />
+    <Compile Include="Interfaces\IAppProvider.cs" />
+    <Compile Include="App\System\Models\MenuItem.cs" />
+    <Compile Include="App\System\AppPortal.cs" />
+    <Compile Include="App\System\Models\PortalUser.cs" />
+    <Compile Include="App\System\AppSystem.cs" />
+    <Compile Include="App\UserSession\UserSession.cs" />
+    <Compile Include="App\UserSession\UserSessionConfig.cs" />
+    <Compile Include="App\Security\AppSecurity.cs" />
+    <Compile Include="App\System\AppContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt\PIS.AutoEnt.csproj">
+      <Project>{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}</Project>
+      <Name>PIS.AutoEnt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt.Framework\PIS.AutoEnt.Framework.csproj">
+      <Project>{D0D7DAB2-0446-4644-A437-24CDE778929C}</Project>
+      <Name>PIS.AutoEnt.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIS.AutoEnt.DataContext\PIS.AutoEnt.DataContext.csproj">
+      <Project>{93c5469f-5f9e-40cd-bb30-087a8956f33c}</Project>
+      <Name>PIS.AutoEnt.DataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIS.AutoEnt.DtoModels\PIS.AutoEnt.DtoModels.csproj">
+      <Project>{960d2e84-f364-40a0-ae67-17b566dd013b}</Project>
+      <Name>PIS.AutoEnt.DtoModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIS.AutoEnt.Repository\PIS.AutoEnt.Repository.csproj">
+      <Project>{b7a245e6-c0a7-4188-86e2-f200dfd0b0ac}</Project>
+      <Name>PIS.AutoEnt.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App\DocSystem\" />
+    <Folder Include="App\Instance\" />
+    <Folder Include="App\Message\" />
+    <Folder Include="App\Module\" />
+    <Folder Include="App\Organization\" />
+    <Folder Include="App\TaskScheduler\" />
+    <Folder Include="App\Template\" />
+    <Folder Include="App\Version\" />
+    <Folder Include="App\Workflow\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk">
+      <Link>pis.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

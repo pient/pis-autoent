@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0D7DAB2-0446-4644-A437-24CDE778929C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS.AutoEnt</RootNamespace>
+    <AssemblyName>PIS.AutoEnt.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\branches\release\binary\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\share\PIS.AutoEnt.Share\Resources\certs\pis.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Caching\CacheNames.cs" />
+    <Compile Include="Caching\MemoryCacheProvider.cs" />
+    <Compile Include="Caching\SystemCache.cs" />
+    <Compile Include="Data\DataAccessors\AppDataAccessor.cs" />
+    <Compile Include="Data\DataAccessors\DataStore\DbDataStore\DbDataStore.cs" />
+    <Compile Include="Data\DataAccessors\DataStore\ObjDataStore\ObjDataStore.cs" />
+    <Compile Include="Data\DataAccessors\DataStore\DbDataStore\SqlDbDataStore.cs" />
+    <Compile Include="Data\DataAccessors\ISysUnitOfWork.cs" />
+    <Compile Include="Data\Request\DataRequest.cs" />
+    <Compile Include="Data\Request\Query\Objects\QueryRequest.cs" />
+    <Compile Include="Data\Request\Query\Objects\QueryResult.cs" />
+    <Compile Include="Data\DataObject\SysObjects\ISysStdObject.cs" />
+    <Compile Include="Data\DataObject\SysObjects\ISysMetaObject.cs" />
+    <Compile Include="Data\Request\Query\Criterions\Condition.cs" />
+    <Compile Include="Data\Request\Query\Criterions\JuncCondition.cs" />
+    <Compile Include="Data\Request\Query\Criterions\QryOrder.cs" />
+    <Compile Include="Data\Request\Query\Criterions\QryOrderCollection.cs" />
+    <Compile Include="Data\Request\Query\Enumerations.cs" />
+    <Compile Include="Data\Request\Query\QueryBuilders\IQueryBuilder.cs" />
+    <Compile Include="Data\Request\Query\QueryBuilders\LinqQueryBuilder.cs" />
+    <Compile Include="Data\Request\Query\QueryBuilders\OracleQueryBuilder.cs" />
+    <Compile Include="Data\Request\Query\QueryBuilders\SqlQueryBuilder.cs" />
+    <Compile Include="Data\Request\Query\Objects\QueryExpr.cs" />
+    <Compile Include="Data\Request\Query\Objects\QueryField.cs" />
+    <Compile Include="Data\Request\Query\Objects\QueryFieldCollection.cs" />
+    <Compile Include="Data\Request\Query\Objects\QueryTarget.cs" />
+    <Compile Include="Data\DataAccessors\FieldMeta.cs" />
+    <Compile Include="Data\DataObject\TreeNode.cs" />
+    <Compile Include="Data\DataObject\XData\XDataItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataObject\XData\XDataItemMeta.cs" />
+    <Compile Include="Data\DataObject\SysObjects\ISysStructedObject.cs" />
+    <Compile Include="Data\DataObject\SysObjects\ISysStdStructedObject.cs" />
+    <Compile Include="Data\DataObject\SysObjects\ISysObject.cs" />
+    <Compile Include="Data\DataObject\XData\XDataNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Exceptions\DbOperationStatus.cs" />
+    <Compile Include="Data\DataObject\XData\Stores\IXDataStorage.cs" />
+    <Compile Include="Data\DataObject\XData\IXDataRepository.cs" />
+    <Compile Include="Data\DataObject\XData\XDataObject.cs" />
+    <Compile Include="Data\DataObject\XData\XDataRepositoryBase.cs" />
+    <Compile Include="Data\DataObject\XData\Stores\XSqlDataStorage.cs" />
+    <Compile Include="Data\DataObject\XData\XDataMeta.cs" />
+    <Compile Include="Data\Exceptions\PISDbException.cs" />
+    <Compile Include="System\AppInitializer.cs" />
+    <Compile Include="Utilities\Data\DataTypeMapper.cs" />
+    <Compile Include="Utilities\Data\SqlDataHelper.cs" />
+    <Compile Include="Data\DataAccessors\DataRepository.cs" />
+    <Compile Include="Pattern\AOP\PISInterceptorAttribute.cs" />
+    <Compile Include="Pattern\AOP\InterceptorTypes.cs" />
+    <Compile Include="System\SystemUser.cs" />
+    <Compile Include="System\AppUser.cs" />
+    <Compile Include="Utilities\Extensions\DataExtensions.cs" />
+    <Compile Include="Pattern\AOP\Attributes\PISExceptionAttribute.cs" />
+    <Compile Include="Pattern\AOP\Attributes\PISLoggingAttribute.cs" />
+    <Compile Include="Pattern\AOP\Attributes\PISTransactionAttribute.cs" />
+    <Compile Include="Pattern\AOP\Attributes\PISAbstractedInterceptorAttribute.cs" />
+    <Compile Include="Pattern\AOP\Interceptors\PISInterceptorArgs.cs" />
+    <Compile Include="Pattern\AOP\Interceptors\PISAbstractInterceptor.cs" />
+    <Compile Include="Pattern\DI\FrameworkInstaller.cs" />
+    <Compile Include="Pattern\ObjectFactories\ObjectFactory.cs" />
+    <Compile Include="Pattern\AOP\Interceptors\PISExceptionInterceptor.cs" />
+    <Compile Include="Pattern\AOP\GeneralInterceptor.cs" />
+    <Compile Include="Pattern\AOP\IPISInterceptor.cs" />
+    <Compile Include="Pattern\AOP\Interceptors\PISLoggingInterceptor.cs" />
+    <Compile Include="Pattern\AOP\Interceptors\PISTransactionInterceptor.cs" />
+    <Compile Include="Pattern\DI\FrameworkConfigResource.cs" />
+    <Compile Include="Utilities\Extensions\ModelExtensions.cs" />
+    <Compile Include="Utilities\Extensions\QueryExtensions.cs" />
+    <Compile Include="Validation\ValidationResults.cs" />
+    <Compile Include="Validation\Attributes\UniqueAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Consts\SysConsts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Diagnostics\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\platform\sites\web\pis.sys.config">
+      <Link>pis.sys.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\share\PIS.AutoEnt.Share\Resources\certs\pis.snk">
+      <Link>pis.snk</Link>
+    </None>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PIS.AutoEnt\PIS.AutoEnt.csproj">
+      <Project>{b8b15dae-be55-4df8-a89b-b4c842fbfac0}</Project>
+      <Name>PIS.AutoEnt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="PIS.AutoEnt.ConfigTool.EncryptWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="编解码" Height="500" Width="800" ResizeMode="CanResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Name="stackPanel1" Grid.Column="0" Grid.Row="0">
+            <StackPanel Name="stackPanel3" Height="33" Orientation="Horizontal">
+                <TextBox Name="txtFile" Margin="5,5,5,5" Width="674" IsReadOnly="True" />
+                <Button Content="打开文件" Height="23" Margin="5,5,5,5" Name="btnOpenFile" Width="75" Click="btnOpenFile_Click" />
+            </StackPanel>
+            <StackPanel  Name="stackPanel2" Height="33" Orientation="Horizontal">
+                <Label Content="机器码：" Height="28" Name="label1" />
+                <TextBox Name="txtMAC" Margin="5,5,5,5" Width="365" Height="23">
+                    <TextBox.ToolTip>
+                        <Label Content="无分隔符或分割符为(“:”或“-”)" />
+                    </TextBox.ToolTip>
+                </TextBox>
+                <Button Content="编码证书" Height="23" Margin="5,5,5,5" Name="btnEncrypt" Width="75" Click="btnEncrypt_Click" />
+                <Button Content="解码证书" Height="23" Margin="5,5,5,5" Name="btnDecrypt" Width="75" Click="btnDecrypt_Click" />
+                <Button Content="另存为..." Height="23" Margin="5,5,5,5" Name="btnSaveAs" Width="75" Click="btnSaveAs_Click" />
+                <Button Content="退出" Height="23" Name="btnExit" Width="75" Click="btnExit_Click" />
+            </StackPanel>
+        </StackPanel>
+        <Grid Name="gridContent" Grid.Column="0" Grid.Row="1" Margin="5,5,5,5">
+            <TextBox Name="txtConfig" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" />
+        </Grid>
+    </Grid>
+</Window>

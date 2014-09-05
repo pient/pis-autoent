@@ -1,0 +1,56 @@
+﻿<DataStore>
+  <Params>
+    <Param Name="FuncType">modify</Param>
+    <Param Name="Key">Hr.Aptitude.0001</Param>
+  </Params>
+  <Forms>
+    <Form Name="Query" PageIndex="MRC:1000;TDRC:224;TRC:224;TPC:14;RCPP:17;CPN:1;CPRC:17;" OrderBy="EmployeeNO:ASC">
+      <EmployeeNO></EmployeeNO>
+      <Name></Name>
+      <Sex></Sex>
+      <DeptId></DeptId>
+      <InCompanyDateBeg></InCompanyDateBeg>
+      <InCompanyDateEnd></InCompanyDateEnd>
+    </Form>
+  </Forms>
+  <Lists>
+    <List Name="Default">
+      <Item Id="HE0035D8" Name="张韩" EmployeeNO="H0001" Dept="董事会" DeptId="PRO0001I.PROPZ002" Sex="男" InCompanyDate="10/1/2003 12:00:00 AM" PersonType="" AptitudeValue="0104.006.0200.021.022.0201.004.0101.0102.0103.0105.0107.0208.0202.0203.0204.0206.0205.0106." AptitudeName=".审定&#xA;.&#xA;.项目经理&#xA;.&#xA;.&#xA;.设计经理&#xA;.&#xA;.设计&#xA;.校核&#xA;.审核&#xA;.单元负责人&#xA;.项目工程师&#xA;.财务经理&#xA;.采购经理&#xA;.施工经理&#xA;.控制经理&#xA;.质量工程师&#xA;.质量经理&#xA;.专业负责人&#xA;" AptitudeMemo="" Major="" MajorId="" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="T" NNN0105="T" NNN0106="T" NNN0107="T" />
+      <Item Id="HE0035DA" Name="陈首创" EmployeeNO="H0002" Dept="董事会" DeptId="PRO0001I.PROPZ002" Sex="男" InCompanyDate="2/1/2004 12:00:00 AM" PersonType="" AptitudeValue="0103.006.0200.021.022.0201.0101.0102.0104.0105.0107.0106.0202.0203.0204.0206.0205." AptitudeName=".审核&#xA;.&#xA;.项目经理&#xA;.&#xA;.&#xA;.设计经理&#xA;.设计&#xA;.校核&#xA;.审定&#xA;.单元负责人&#xA;.项目工程师&#xA;.专业负责人&#xA;.采购经理&#xA;.施工经理&#xA;.控制经理&#xA;.质量工程师&#xA;.质量经理&#xA;" AptitudeMemo="" Major="" MajorId="" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="T" NNN0105="T" NNN0106="T" NNN0107="T" />
+      <Item Id="HE0035DC" Name="张明会" EmployeeNO="H0003" Dept="董事会" DeptId="PRO0001I.PROPZ002" Sex="男" InCompanyDate="4/1/2005 12:00:00 AM" PersonType="" AptitudeValue="006.0200.021.022.0201.0101.0102.0104.0103.0105.0106.0107.0208.0202.0203.0204.0206.0205." AptitudeName=".&#xA;.项目经理&#xA;.&#xA;.&#xA;.设计经理&#xA;.设计&#xA;.校核&#xA;.审定&#xA;.审核&#xA;.单元负责人&#xA;.专业负责人&#xA;.项目工程师&#xA;.财务经理&#xA;.采购经理&#xA;.施工经理&#xA;.控制经理&#xA;.质量工程师&#xA;.质量经理&#xA;" AptitudeMemo="" Major="" MajorId="" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="T" NNN0105="T" NNN0106="T" NNN0107="T" />
+      <Item Id="HE0035HA" Name="苏小妹" EmployeeNO="H0005" Dept="综合管理部" DeptId="PRO0001I.PROPZ006" Sex="女" InCompanyDate="8/4/2008 12:00:00 AM" PersonType="" AptitudeValue="" AptitudeName="" AptitudeMemo="" Major="" MajorId="" IsChange="" NNN0101="F" NNN0102="F" NNN0103="F" NNN0104="F" NNN0105="F" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035HI" Name="李胜利" EmployeeNO="H0006" Dept="项目管理部" DeptId="PRO0001I.PROP0B20" Sex="男" InCompanyDate="9/1/2008 12:00:00 AM" PersonType="" AptitudeValue="0201.0204." AptitudeName=".设计经理&#xA;.控制经理&#xA;" AptitudeMemo="" Major="设计管理" MajorId="PRO0001I.PROP0B20.SHHT_XM-SJ_Organ" IsChange="" NNN0101="F" NNN0102="F" NNN0103="F" NNN0104="F" NNN0105="F" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035GS" Name="李波" EmployeeNO="H0008" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="女" InCompanyDate="5/5/2008 12:00:00 AM" PersonType="" AptitudeValue="0102.0101.0105.0103." AptitudeName=".校核&#xA;.设计&#xA;.单元负责人&#xA;.审核&#xA;" AptitudeMemo="" Major="工艺专业" MajorId="PRO0001I.PROPZ00C.PROPZ00U" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035DK" Name="王力" EmployeeNO="H0009" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="男" InCompanyDate="12/1/2004 12:00:00 AM" PersonType="" AptitudeValue="0102.0101.0103.0105." AptitudeName=".校核&#xA;.设计&#xA;.审核&#xA;.单元负责人&#xA;" AptitudeMemo="" Major="管道专业" MajorId="PRO0001I.PROPZ00C.PROPZ00S" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035EW" Name="张金生" EmployeeNO="H0010" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="男" InCompanyDate="5/8/2007 12:00:00 AM" PersonType="" AptitudeValue="0101.0102.0105.0107." AptitudeName=".设计&#xA;.校核&#xA;.单元负责人&#xA;.项目工程师&#xA;" AptitudeMemo="" Major="工艺专业" MajorId="PRO0001I.PROPZ00C.PROPZ00U" IsChange="" NNN0101="T" NNN0102="T" NNN0103="F" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="T" />
+      <Item Id="HE0035DW" Name="张勇" EmployeeNO="H0012" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="男" InCompanyDate="7/1/2005 12:00:00 AM" PersonType="" AptitudeValue="0102.0101.0105." AptitudeName=".校核&#xA;.设计&#xA;.单元负责人&#xA;" AptitudeMemo="" Major="工艺专业" MajorId="PRO0001I.PROPZ00C.PROPZ00U" IsChange="" NNN0101="T" NNN0102="T" NNN0103="F" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035DY" Name="张京立" EmployeeNO="H0013" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="男" InCompanyDate="7/1/2005 12:00:00 AM" PersonType="" AptitudeValue="0104.0101.0102.0103.0105.0106.0107.0200.0201.0202.0203.0204.0206.0205." AptitudeName=".审定&#xA;.设计&#xA;.校核&#xA;.审核&#xA;.单元负责人&#xA;.专业负责人&#xA;.项目工程师&#xA;.项目经理&#xA;.设计经理&#xA;.采购经理&#xA;.施工经理&#xA;.控制经理&#xA;.质量工程师&#xA;.质量经理&#xA;" AptitudeMemo="" Major="管道专业" MajorId="PRO0001I.PROPZ00C.PROPZ00S" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="T" NNN0105="T" NNN0106="T" NNN0107="T" />
+      <Item Id="HE0035DG" Name="华庆飞" EmployeeNO="H0014" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="男" InCompanyDate="9/1/2004 12:00:00 AM" PersonType="" AptitudeValue="0103.0101.0102.0105.0107.0106.0200.0201.0202.0203.0204.0206.0205." AptitudeName=".审核&#xA;.设计&#xA;.校核&#xA;.单元负责人&#xA;.项目工程师&#xA;.专业负责人&#xA;.项目经理&#xA;.设计经理&#xA;.采购经理&#xA;.施工经理&#xA;.控制经理&#xA;.质量工程师&#xA;.质量经理&#xA;" AptitudeMemo="" Major="管道专业" MajorId="PRO0001I.PROPZ00C.PROPZ00S" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="F" NNN0105="T" NNN0106="T" NNN0107="T" />
+      <Item Id="HE0035DO" Name="伦剑红" EmployeeNO="H0016" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="女" InCompanyDate="8/1/2005 12:00:00 AM" PersonType="" AptitudeValue="0104.0102.0101.0103.0105.0107.0106.0200.0201.0202.0203.0204.0206.0205." AptitudeName=".审定&#xA;.校核&#xA;.设计&#xA;.审核&#xA;.单元负责人&#xA;.项目工程师&#xA;.专业负责人&#xA;.项目经理&#xA;.设计经理&#xA;.采购经理&#xA;.施工经理&#xA;.控制经理&#xA;.质量工程师&#xA;.质量经理&#xA;" AptitudeMemo="" Major="管道专业" MajorId="PRO0001I.PROPZ00C.PROPZ00S" IsChange="" NNN0101="T" NNN0102="T" NNN0103="T" NNN0104="T" NNN0105="T" NNN0106="T" NNN0107="T" />
+      <Item Id="HE0035GC" Name="冯亚楠" EmployeeNO="H0017" Dept="仪电室" DeptId="PRO0001I.PROPZ00A" Sex="男" InCompanyDate="2/18/2008 12:00:00 AM" PersonType="" AptitudeValue="0101.0102.0105." AptitudeName=".设计&#xA;.校核&#xA;.单元负责人&#xA;" AptitudeMemo="" Major="电气专业" MajorId="PRO0001I.PROPZ00A.PROPZ00P" IsChange="" NNN0101="T" NNN0102="T" NNN0103="F" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035I2" Name="陈法平" EmployeeNO="H0018" Dept="项目管理部" DeptId="PRO0001I.PROP0B20" Sex="女" InCompanyDate="3/12/2009 12:00:00 AM" PersonType="" AptitudeValue="" AptitudeName="" AptitudeMemo="" Major="出版管理" MajorId="PRO0001I.PROP0B20.SHHT_XM-CB_Organ" IsChange="" NNN0101="F" NNN0102="F" NNN0103="F" NNN0104="F" NNN0105="F" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035DE" Name="李彦磊" EmployeeNO="H0019" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="男" InCompanyDate="10/1/2004 12:00:00 AM" PersonType="" AptitudeValue="0102.0101.0105." AptitudeName=".校核&#xA;.设计&#xA;.单元负责人&#xA;" AptitudeMemo="" Major="管道专业" MajorId="PRO0001I.PROPZ00C.PROPZ00S" IsChange="" NNN0101="T" NNN0102="T" NNN0103="F" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035DM" Name="张敏" EmployeeNO="H0020" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="女" InCompanyDate="10/1/2005 12:00:00 AM" PersonType="" AptitudeValue="0102.0101.0105." AptitudeName=".校核&#xA;.设计&#xA;.单元负责人&#xA;" AptitudeMemo="" Major="管道专业" MajorId="PRO0001I.PROPZ00C.PROPZ00S" IsChange="" NNN0101="T" NNN0102="T" NNN0103="F" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="F" />
+      <Item Id="HE0035EG" Name="胡云金" EmployeeNO="H0021" Dept="工艺室" DeptId="PRO0001I.PROPZ00C" Sex="男" InCompanyDate="12/15/2006 12:00:00 AM" PersonType="" AptitudeValue="0102.0101.0105." AptitudeName=".校核&#xA;.设计&#xA;.单元负责人&#xA;" AptitudeMemo="" Major="管道专业" MajorId="PRO0001I.PROPZ00C.PROPZ00S" IsChange="" NNN0101="T" NNN0102="T" NNN0103="F" NNN0104="F" NNN0105="T" NNN0106="F" NNN0107="F" />
+    </List>
+  </Lists>
+  <Enums>
+    <Enum Name="Aptitude">
+      <Item Value="0101" Text="设计" SubEnum="" ExtValue="" />
+      <Item Value="0102" Text="校核" SubEnum="" ExtValue="" />
+      <Item Value="0103" Text="审核" SubEnum="" ExtValue="" />
+      <Item Value="0104" Text="审定" SubEnum="" ExtValue="" />
+      <Item Value="0105" Text="单元负责人" SubEnum="" ExtValue="" />
+      <Item Value="0106" Text="专业负责人" SubEnum="" ExtValue="" />
+      <Item Value="0107" Text="项目工程师" SubEnum="" ExtValue="" />
+    </Enum>
+    <Enum Name="EmployeeSex">
+      <Item Value="男" Text="男" SubEnum="" ExtValue="" />
+      <Item Value="女" Text="女" SubEnum="" ExtValue="" />
+    </Enum>
+    <Enum Name="PersonType">
+      <Item Value="1" Text="正式员工" SubEnum="" ExtValue="" />
+      <Item Value="2" Text="外聘员工" SubEnum="" ExtValue="" />
+    </Enum>
+  </Enums>
+</DataStore>

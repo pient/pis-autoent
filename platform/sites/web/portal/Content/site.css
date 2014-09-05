@@ -1,0 +1,162 @@
+﻿/*global*/
+
+body{
+    margin:0;
+    font-size: 12px;
+    background: #cfd6dc;
+    font-family: Arial, Helvetica, sans-serif,'宋体';
+}
+
+h2 {
+    font-size:18px;
+    font-weight:bold;
+    margin:0;
+}
+
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #aecdef;
+  text-decoration: none;
+}
+
+.tooltip
+{
+    opacity:100;
+}
+
+/*app css*/
+
+.app-navbar
+{
+    color:white;
+    font-weight: bold;
+    border: 0px;
+
+    background-color: #157fcc !important;
+    background-image: -moz-linear-gradient(top, #2672ec, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2672ec), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #2672ec, #0044cc);
+    background-image: -o-linear-gradient(top, #2672ec, #0044cc);
+    background-image: linear-gradient(to bottom, #2672ec, #0044cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2672ec', endColorstr='#ff0044cc', GradientType=0);
+    border-color: gray;
+}
+
+.app-navbar a
+{
+    color:white;
+}
+
+.app-navbar .x-btn
+{
+    color:white !important;
+}
+
+.app-navbar-title
+{
+    color:white !important;
+    font-weight:bold !important;
+    font-size:22px !important;
+}
+
+.app-panel
+{
+    float:none; 
+    position:absolute; 
+    left:0px; 
+    top:40px; 
+    border:0px;
+    margin:0px;
+    width:100%; 
+    color:white;
+    visibility:hidden;
+    z-index:1001; 
+    background-color:#0088cc;
+}
+
+.app-panel-tabs
+{
+    padding:1px;
+}
+
+.app-panel-modules ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+}
+
+.app-panel-modules li
+{
+    display: inline;
+    float: left;
+    margin: 10px;
+}
+
+.app-panel-item
+{
+    display: block;
+    text-decoration: none;
+}
+
+.app-panel-item img
+{
+    border: 1px solid #aecdef;
+    width:80px;
+    height:80px;
+}
+
+.app-panel-item p
+{
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    color: #c3c3c3;
+}
+
+.app-sidebar
+{
+    border:0px;
+    width:180px;
+    border-right:1px solid #aecdef;
+}
+
+.app-sidebar-head
+{
+    padding: 10px; 
+    font-weight: bold; 
+    color: #095b91; 
+    border-bottom: 1px solid rgb(153, 188, 232);
+}
+
+.app-body
+{
+    background: url(../Images/portal/main_bg.jpg) repeat-x 0 0 #dce2e7;
+    border:0px;
+}
+
+.app-progress-bar {
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: -webkit-box;
+    z-index: 50001;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background-repeat: repeat;
+}
+
+.app-validate-msg
+{
+    color:red;
+}
+

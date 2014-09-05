@@ -1,0 +1,33 @@
+﻿@model PageModel
+
+@{
+}
+
+@section head{
+    <style type="text/css">
+
+    </style>
+}
+
+@section scripts{
+    <script src="~/Scripts/app/setup/sys/Module.js"></script>
+
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            PISConfig.Init();
+
+            Ext.Ajax.request({
+                url: '/api/portal/GetPageData',
+                params: {},
+                success: function (response, opts) {
+                    var pageData = Ext.decode(response.responseText);
+
+                    Ext.create('PIS.setup.SysModuleViewport', { pageData: pageData });
+                },
+                failure: function (response, opts) {
+                    alert('请求失败,错误代码：' + response.status)
+                }
+            });
+        });
+    </script>
+}

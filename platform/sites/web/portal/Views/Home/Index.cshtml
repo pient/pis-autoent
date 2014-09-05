@@ -1,0 +1,154 @@
+﻿@model PIS.AutoEnt.Portal.Models.Home.HomeModel
+
+@{
+    
+}
+
+@section head{
+
+    <style type="text/css">
+
+        #app_portal_top
+        {
+            color:White;
+            height:40px;
+            padding: 2px;
+        }
+
+        #app_func_bar
+        {
+            width:300px;
+            margin:0px; 
+            padding:0px; 
+            float:right; 
+            font-size:12px; 
+            font-weight:bold; 
+            color:#eff6f2; 
+            margin-right:15px;
+            margin-top:2px; 
+            text-align:right;
+        }
+
+        #app_func_title
+        {
+            height:40px; 
+            margin-left:10px;
+            float:left;
+            padding: 2px;
+            font:italic bold 25px arial,sans-serif; 
+        }
+
+        #app_menu_header
+        {
+            font-weight:bold; 
+            color:#095b91; 
+            font-size:12px;
+            padding:5px;
+        }
+
+        #app_footer
+        {
+            background-color:#2672ec; 
+            display:none;
+        }
+
+        .symbol-img
+        {
+            vertical-align:middle;
+        }
+
+        .symbol-icon
+        {
+            vertical-align:middle;
+            width:16px;
+        }
+    
+        .x-grid-row 
+        {
+            border:0px;
+            height:25px;
+        }
+
+        .x-grid-td
+        {
+            border:0px !important;
+        }
+    
+        .x-grid-cell
+        {
+            background-color:#f5f5f5 !important;
+        }
+    
+        .x-grid-body
+        {
+            padding-top:5px;
+            background-color:#f5f5f5 !important;
+        }
+	</style>
+}
+
+@section scripts{
+    <script src="~/Scripts/app/portal.js"></script>
+}
+
+<div id="app_portal_top">
+    <span id="app_func_title">@Model.SystemName</span>
+
+    <span id='app_func_bar'>
+        <span id='func_content'>
+            <span style="cursor:pointer;" onclick='PISPortal.reloadModules()'>
+                刷新模块
+            </span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <span style="cursor:pointer;" onclick='PISPortal.loadWorkbench()'>
+                <img class="symbol-img" src="Images/thumbnails/user.png" height="30" />
+                @(Model.User == null ? "" : Model.User.Name)
+            </span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <span>
+                <span id='unread_content' style='cursor:pointer' onclick='PIC.ExtPortalViewport.OnFuncClick("msg")' title="未读消息">
+                    <img class="symbol-icon" src="/images/icons/msg.png" />
+                    <label id="lbl_msgnew" style="color:Red; margin:2px;">
+                    </label>
+                </span>|&nbsp;&nbsp;
+                <span id='newtask_content' style='cursor:pointer' onclick='PIC.ExtPortalViewport.OnFuncClick("task")' title="新任务">
+                    <img class="symbol-icon" src="/images/icons/task-3.png" />
+                    <label id="lbl_tasknew" style="color:Red; margin:2px;">
+                    0
+                    </label>
+                </span>|&nbsp;&nbsp;
+                <span onclick='PISPortal.relogin()' style="cursor:pointer">重新登陆</span>
+            </span>
+        </span>
+    </span>
+</div>
+
+<div id="app_menu_header">
+    <span style="cursor:pointer;" onclick='PISPortal.loadWorkbench()'>
+        <span style="vertical-align:middle">
+            <img class="symbol-img" src="Images/thumbnails/user.png" height="45" />
+        </span>
+        &nbsp;&nbsp;
+        @(Model.User == null ? "" : Model.User.Name)
+    </span>
+</div>
+
+<div id='app_footer'>
+    <table style="font-size:12px; color:white; padding:5px; width:100%;">
+        <tr>
+            <td>
+            <span id="date_content" style="cursor:pointer" onclick="PIC.ExtPortalViewport.OnFuncClick('date')">
+                <script language="javascript">
+                </script>
+            </span>
+            &nbsp;|&nbsp;
+            <a href="PortalService.SystemInfo.CompanyWebsite" style="color:white; text-decoration:none;" target="_blank">公司主页</a>
+            &nbsp;|&nbsp;
+            <a href="http://www.baidu.com/" style="color:white; text-decoration:none;" target="_blank">百度</a>
+            </td>
+            <td align="right">
+                <span style="cursor:pointer; margin-right:20px;" onclick="OpenVersionDialog()">PortalService.SystemInfo.CompanyName 版本信息</span>
+            </td>
+        </tr>
+    </table>
+</div>

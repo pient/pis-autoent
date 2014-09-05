@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHibernate;
+using NHibernate.Criterion;
+using NUnit.Framework;
+using PIS.Framework.Model;
+using PIS.Framework.DataAccess;
+
+namespace PIS.Framework.Tests.Data
+{
+    [TestFixture]
+    public class NHHelperTest
+    {
+        const string TEST_USER_ID = "46c5f4df-f6d1-4b36-96ac-d39d3dd65a5d";
+        const string TEST_USER_NAME = "admin";
+
+        [SetUp]
+        public void Setup()
+        {
+            NHibernateManager.Configure();
+        }
+
+        [Test]
+        public void Count()
+        {
+            int count_1 = NHHelper.Count<OrgUser>();
+            int count_2 = NHHelper.Count<OrgUser>(Expression.Eq("UserId", TEST_USER_ID));
+
+            Assert.Greater(count_1, 0);
+            Assert.AreEqual(count_2, 1);
+        }
+
+        [Test]
+        public void FindAll()
+        {
+            IList<OrgUser> ents = NHHelper.FindAll<OrgUser>();
+            Assert.Greater(ents.Count, 0);
+
+            ents = NHHelper.FindAll<OrgUser>(Expression.Eq("UserId", TEST_USER_ID));
+            Assert.Greater(ents.Count, 0);
+        }
+
+        [Test]
+        public void FindByProperty()
+        {
+            IList<OrgUser> ents = NHHelper.FindAllByProperty<OrgUser>("UserId", TEST_USER_ID);
+            Assert.Greater(ents.Count, 0);
+
+            ents = NHHelper.FindAllByProperty<OrgUser>("UserId", "UserId", TEST_USER_ID);
+            Assert.Greater(ents.Count, 0);
+
+            ents = NHHelper.FindAllByProperties<OrgUser>("UserId", TEST_USER_ID);
+            Assert.Greater(ents.Count, 0);
+
+            ents = NHHelper.FindAllByProperties<OrgUser>(new Order[] { Order.Asc("UserId") }, "UserId", TEST_USER_ID);
+            Assert.Greater(ents.Count, 0);
+
+            OrgUser ent = NHHelper.FindFirstByProperties<OrgUser>("UserId", TEST_USER_ID);
+            Assert.AreEqual(ent.Name, TEST_USER_NAME);
+
+            ent = NHHelper.FindFirstByProperties<OrgUser>(new Order[] { Order.Asc("UserId") }, "UserId", TEST_USER_ID);
+            Assert.AreEqual(ent.Name, TEST_USER_NAME);
+        }
+
+        [Test]
+        public void FindFirst()
+        {
+            OrgUser ent = NHHelper.FindFirst<OrgUser>(Expression.Eq("UserId", TEST_USER_ID));
+            Assert.AreEqual(ent.Name, TEST_USER_NAME);
+
+            ent = NHHelper.FindFirst<OrgUser>(new Order[] { Order.Asc("UserId") }, Expression.Eq("UserId", TEST_USER_ID));
+            Assert.AreEqual(ent.Name, TEST_USER_NAME);
+        }
+
+        [Test]
+        public void SlicedFindAll()
+        {
+            IList<OrgUser> ents = NHHelper.SlicedFindAll<OrgUser>(0, 20);
+            Assert.Greater(ents.Count, 0);
+
+            ents = NHHelper.SlicedFindAll<OrgUser>(NHibernateManager.SessionFactory, 0, 20, new Order[0] { });
+            Assert.Greater(ents.Count, 0);
+
+            ents = NHHelper.SlicedFindAll<OrgUser>(NHibernateManager.SessionFactory, 0, 20, null, Expression.Eq("UserId", TEST_USER_ID));
+            Assert.Greater(ents.Count, 0);
+
+            ents = NHHelper.SlicedFindAll<OrgUser>(NHibernateManager.SessionFactory, 0, 20, new Order[] { Order.Asc("UserId") }, Expression.Eq("UserId", TEST_USER_ID));
+            Assert.Greater(ents.Count, 0);
+        }
+    }
+}

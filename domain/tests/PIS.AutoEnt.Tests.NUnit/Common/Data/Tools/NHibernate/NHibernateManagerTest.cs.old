@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHibernate;
+using NUnit.Framework;
+using PIS.Testing;
+
+namespace PIS.Framework.Tests.Data
+{
+    [TestFixture]
+    public class NHibernateManagerTest
+    {
+        [Test]
+        public void Configure_GetSessionFactory()
+        {
+            CodeTimer.Time("NHibernateManager.Configure", 1, () => { NHibernateManager.Configure(); });
+
+            ISessionFactory factory = null;
+            CodeTimer.Time("NHibernateManager.GetSessionFactory(\"Default\")", 1, () => { factory = NHibernateManager.GetSessionFactory("Default"); });
+
+            Assert.IsNotNull(factory);
+
+            CodeTimer.Time("NHibernateManager.GetSessionFactory(\"PICTemp\")", 1, () => { factory = NHibernateManager.GetSessionFactory("PICTemp"); });
+
+            Assert.IsNotNull(factory);
+        }
+
+        [Test]
+        public void Session()
+        {
+            NHibernateManager.Configure();
+
+            Assert.IsNotNull(NHibernateManager.Session);
+            Assert.IsNotNull(NHibernateManager.StatelessSession);
+        }
+    }
+}

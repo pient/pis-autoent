@@ -1,0 +1,22 @@
+﻿
+<table style="width:100%;">
+    <tr>
+        <td>
+            <ul class="inline pull-left">
+                <li>
+                    @GlobalResource.HelpCenter
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    @GlobalResource.Feedback
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                </li>
+            </ul>
+        </td>
+        <td>
+            <ul class="inline pull-right">
+                <li>@Html.ActionLink("English", "Index", "Home", new { lang = "en-US" }, null)</li>
+                <li>|</li>
+                <li>@Html.ActionLink("中文", "Index", "Home", new { lang = "zh-CN" }, null)</li>
+            </ul>
+        </td>
+    </tr>
+</table>

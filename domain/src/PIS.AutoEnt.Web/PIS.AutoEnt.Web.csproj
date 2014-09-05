@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5018653-2232-464E-8129-16BFCCFA76F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS.AutoEnt.Web</RootNamespace>
+    <AssemblyName>PIS.AutoEnt.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\branches\release\binary\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Portal\Api\Filters\BasicAuthenticationFilter.cs" />
+    <Compile Include="Portal\Api\Controllers\ApiControllerBase.cs" />
+    <Compile Include="Portal\Mvc\Controllers\AbstractController.cs" />
+    <Compile Include="Portal\Mvc\Controllers\PortalControllerBase.cs" />
+    <Compile Include="Portal\Mvc\Controllers\PortalApiController.cs" />
+    <Compile Include="Portal\Api\Filters\RequireAuthorizeAttribute.cs" />
+    <Compile Include="Portal\Mvc\Filters\HandleExceptionFilter.cs" />
+    <Compile Include="Portal\Mvc\Models\AbstractViewModel.cs" />
+    <Compile Include="Portal\Mvc\Filters\RequireAuthorizeAttribute.cs" />
+    <Compile Include="Portal\Mvc\Models\PortalViewModel.cs" />
+    <Compile Include="Pattern\WebProvidersInstaller.cs" />
+    <Compile Include="Data\PageData.cs" />
+    <Compile Include="Data\UserData.cs" />
+    <Compile Include="Portal\WebAppProvider.cs" />
+    <Compile Include="Data\FormData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AuthModule.cs" />
+    <Compile Include="Security\SysFormIdentity.cs" />
+    <Compile Include="Utilities\WebHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt\PIS.AutoEnt.csproj">
+      <Project>{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}</Project>
+      <Name>PIS.AutoEnt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIS.AutoEnt.DtoModels\PIS.AutoEnt.DtoModels.csproj">
+      <Project>{960d2e84-f364-40a0-ae67-17b566dd013b}</Project>
+      <Name>PIS.AutoEnt.DtoModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIS.AutoEnt.Module\PIS.AutoEnt.Module.csproj">
+      <Project>{78709905-1F11-4C29-9889-7F75D254E0AC}</Project>
+      <Name>PIS.AutoEnt.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt.Framework\PIS.AutoEnt.Framework.csproj">
+      <Project>{D0D7DAB2-0446-4644-A437-24CDE778929C}</Project>
+      <Name>PIS.AutoEnt.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk">
+      <Link>pis.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

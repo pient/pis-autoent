@@ -1,0 +1,22 @@
+﻿@model PageModel
+
+@{
+}
+
+@section head{
+    <style type="text/css">
+
+    </style>
+}
+
+@section scripts{
+    <script src="~/Scripts/app/setup/sys/Module.js"></script>
+
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            PISConfig.Init();
+
+            alert('@Model.PageCode')
+        });
+    </script>
+}

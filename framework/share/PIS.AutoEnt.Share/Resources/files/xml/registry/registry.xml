@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<registry>
+  <system>
+    <settings>
+      <item></item>
+      <item></item>
+    </settings>
+    <log></log>
+    <cache></cache>
+    <workflow></workflow>
+    <docsystem></docsystem>
+    <taskscheduler></taskscheduler>
+    <portal>
+      <settings></settings>
+      <menu>
+        <node code="Fav" name="Fav" title="收藏夹">
+          <item code="Home" name="Home" title="主页" />
+          <item code="Workbench" name="Workbench" title="工作台" />
+          <item code="Msg" name="Msg" title="消息" />
+          <item code="Task" name="Task" title="任务" />
+          <item code="Plan" name="Plan" title="计划" />
+          <node>
+            <item></item>
+          </node>
+        </node>
+        <node code="App" name="App" title="应用">
+          <item code="Dev" name="Dev" securityCode="Dev" securityLevel="90" title="开发" />
+          <item code="Admin" name="Admin" securityCode="Admin" securityLevel="100" title="系统管理" />
+          <node>
+            <item></item>
+            <item></item>
+            <item></item>
+          </node>
+        </node>
+      </menu>
+    </portal>
+    <enumeration>
+      <nodes>
+        <node>
+          <item id="" code="" name="" />
+          <nodes>
+            <node></node>
+            <node></node>
+          </nodes>
+        </node>
+      </nodes>
+    </enumeration>
+  </system>
+  <app>
+    <settings>
+      <item></item>
+      <item></item>
+    </settings>
+    <orgnization></orgnization>
+  </app>
+  <biz>
+    <settings>
+      <item></item>
+      <item></item>
+    </settings>
+  </biz>
+</registry>

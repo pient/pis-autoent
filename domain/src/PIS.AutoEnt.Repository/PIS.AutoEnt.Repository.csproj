@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7A245E6-C0A7-4188-86E2-F200DFD0B0AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS.AutoEnt.Repository</RootNamespace>
+    <AssemblyName>PIS.AutoEnt.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\..\..\..\..\Products\AutoEnt\Workspace\Src\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Products\AutoEnt\Workspace\Src\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Products\AutoEnt\Workspace\Src\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\..\packages\EntityFramework.Extended.5.0.0.71\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\SysDataAccessor.cs" />
+    <Compile Include="DataAccess\SysDbContext.cs" />
+    <Compile Include="Interfaces\Auth\IAuthRepository.cs" />
+    <Compile Include="Interfaces\Organization\IOrgRepository.cs" />
+    <Compile Include="Interfaces\Organization\IUserRepository.cs" />
+    <Compile Include="Interfaces\Organization\IGroupRepository.cs" />
+    <Compile Include="Interfaces\Setup\IModuleRepository.cs" />
+    <Compile Include="Interfaces\System\IMetaRepository.cs" />
+    <Compile Include="Interfaces\System\IMetaObjectRepository.cs" />
+    <Compile Include="Interfaces\System\IObjRepository.cs" />
+    <Compile Include="Interfaces\System\IRegRepository.cs" />
+    <Compile Include="Interfaces\System\IDataStructureRepository.cs" />
+    <Compile Include="Interfaces\System\IStdObjRepository.cs" />
+    <Compile Include="Interfaces\System\IStructedRepository.cs" />
+    <Compile Include="Interfaces\System\IStdStructedRepository.cs" />
+    <Compile Include="Interfaces\System\ISysRepository.cs" />
+    <Compile Include="IRepositoryProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepoConfigs\RepoInitializer.cs" />
+    <Compile Include="RepoConfigs\RepoMapperConfig.cs" />
+    <Compile Include="RepoConfigs\RepositoriesInstaller.cs" />
+    <Compile Include="Repository\Auth\AuthRepository.cs" />
+    <Compile Include="Repository\Base\SysDataRepository.cs" />
+    <Compile Include="Repository\Base\SysMetaObjectRepository.cs" />
+    <Compile Include="Repository\Base\SysStructedObjectRepository.cs" />
+    <Compile Include="Repository\Organization\OrgRepository.cs" />
+    <Compile Include="Repository\Organization\UserRepository.cs" />
+    <Compile Include="Repository\Organization\RoleRepository.cs" />
+    <Compile Include="Repository\Setup\ModuleRepository.cs" />
+    <Compile Include="Repository\Setup\ModuleRepositoryExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repository\System\ObjRepository.cs" />
+    <Compile Include="Repository\System\RegRepository.cs" />
+    <Compile Include="Repository\System\MetaRepository.cs" />
+    <Compile Include="Repository\System\SysRepository.cs" />
+    <Compile Include="Repository\System\DataStructureRepository.cs" />
+    <Compile Include="UnitOfWork\SysUnitOfWork.cs" />
+    <Compile Include="Utilities\RepositoryExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt\PIS.AutoEnt.csproj">
+      <Project>{b8b15dae-be55-4df8-a89b-b4c842fbfac0}</Project>
+      <Name>PIS.AutoEnt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt.Framework\PIS.AutoEnt.Framework.csproj">
+      <Project>{d0d7dab2-0446-4644-a437-24cde778929c}</Project>
+      <Name>PIS.AutoEnt.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIS.AutoEnt.DataContext\PIS.AutoEnt.DataContext.csproj">
+      <Project>{93c5469f-5f9e-40cd-bb30-087a8956f33c}</Project>
+      <Name>PIS.AutoEnt.DataContext</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk">
+      <Link>pis.snk</Link>
+    </None>
+    <None Include="App.config" />
+    <Compile Include="Interfaces\Organization\IRoleRepository.cs" />
+    <None Include="packages.config" />
+    <Compile Include="Repository\Organization\GroupRepository.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

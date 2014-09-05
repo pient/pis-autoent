@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4DC71E7-AD88-4B5D-9186-CC96559A14AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS.AutoEnt.Domain.Tests</RootNamespace>
+    <AssemblyName>PIS.AutoEnt.Domain.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Data\DataObject\Query\SqlQueryBuilderTest.cs" />
+    <Compile Include="Common\Data\DataObject\XDataNodeTest.cs" />
+    <Compile Include="Common\Data\DataObject\XNodeTest.cs" />
+    <Compile Include="Common\Data\DataObject\Providers\XSQLDataProviderTest.cs" />
+    <Compile Include="Common\Data\DataObject\Validation\ValidationTest.cs" />
+    <Compile Include="Common\TestAppProvider.cs" />
+    <Compile Include="Common\TestingInitializer.cs" />
+    <Compile Include="Common\TestProvidersInstaller.cs" />
+    <Compile Include="Common\XData\XDatastore_Test.cs" />
+    <Compile Include="DataContexts\RegistryModel_Test.cs" />
+    <Compile Include="DataContexts\OrgDbContextTest.cs" />
+    <Compile Include="DataContexts\SysDbContextTest.cs" />
+    <Compile Include="Modules\Portal\RegistryTest.cs" />
+    <Compile Include="Repositories\Organization\UserRepositoryTest.cs" />
+    <Compile Include="Repositories\Setup\ModuleRepositoryTest.cs" />
+    <Compile Include="Repositories\SysObjectTest.cs" />
+    <Compile Include="Repositories\System\PortalRepositoryTest.cs" />
+    <Compile Include="Modules\Portal\PortalManagerTest.cs" />
+    <Compile Include="Modules\Portal\UserSessionManagerTest.cs" />
+    <Compile Include="Modules\System\AppInitializer_Test.cs" />
+    <Compile Include="Modules\System\AppSecurity_Test.cs" />
+    <Compile Include="Modules\System\Caching\CacheManagerTest.cs" />
+    <Compile Include="Modules\System\Caching\SystemCacheTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataContexts\ModelHelperTest.cs" />
+    <Compile Include="Service\Wcf\SysServiceHostTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\framework\share\PIS.AutoEnt.Share\Resources\certs\pis.snk">
+      <Link>pis.snk</Link>
+    </None>
+    <None Include="App.config" />
+    <None Include="license.config" />
+    <None Include="license.dec.config" />
+    <None Include="packages.config" />
+    <None Include="pis.sys.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="pis.sys.enc.config" />
+    <None Include="pis.sys.old.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt\PIS.AutoEnt.csproj">
+      <Project>{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}</Project>
+      <Name>PIS.AutoEnt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\PIS.AutoEnt.DataContext\PIS.AutoEnt.DataContext.csproj">
+      <Project>{93c5469f-5f9e-40cd-bb30-087a8956f33c}</Project>
+      <Name>PIS.AutoEnt.DataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\PIS.AutoEnt.DtoModels\PIS.AutoEnt.DtoModels.csproj">
+      <Project>{960d2e84-f364-40a0-ae67-17b566dd013b}</Project>
+      <Name>PIS.AutoEnt.DtoModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\PIS.AutoEnt.Module\PIS.AutoEnt.Module.csproj">
+      <Project>{78709905-1F11-4C29-9889-7F75D254E0AC}</Project>
+      <Name>PIS.AutoEnt.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\PIS.AutoEnt.Repository\PIS.AutoEnt.Repository.csproj">
+      <Project>{b7a245e6-c0a7-4188-86e2-f200dfd0b0ac}</Project>
+      <Name>PIS.AutoEnt.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\PIS.AutoEnt.Web\PIS.AutoEnt.Web.csproj">
+      <Project>{D5018653-2232-464E-8129-16BFCCFA76F1}</Project>
+      <Name>PIS.AutoEnt.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\src\PIS.AutoEnt.Framework\PIS.AutoEnt.Framework.csproj">
+      <Project>{D0D7DAB2-0446-4644-A437-24CDE778929C}</Project>
+      <Name>PIS.AutoEnt.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

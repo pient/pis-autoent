@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS.AutoEnt</RootNamespace>
+    <AssemblyName>PIS.AutoEnt</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\branches\release\binary\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\share\PIS.AutoEnt.Share\Resources\certs\pis.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\log4net.2.0.0\lib\net35-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.4.5.11\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADT\EasyCollection.cs" />
+    <Compile Include="Caching\AbstractedCache.cs" />
+    <Compile Include="Caching\CacheEventArgs.cs" />
+    <Compile Include="Caching\CacheNode.cs" />
+    <Compile Include="Caching\ICacheProvider.cs" />
+    <Compile Include="Config\ConfigSections.cs" />
+    <Compile Include="Config\LogConfig.cs" />
+    <Compile Include="Data\DataObject\IDataStorage.cs" />
+    <Compile Include="Data\Interfaces\IDataIndex.cs" />
+    <Compile Include="Data\Interfaces\IDataItem.cs" />
+    <Compile Include="Data\Interfaces\IDataNode.cs" />
+    <Compile Include="Data\Interfaces\IDataStore.cs" />
+    <Compile Include="Data\XData\DataStore\XDataIndex.cs" />
+    <Compile Include="Data\XData\DataStore\XDataItem.cs" />
+    <Compile Include="Data\XData\DataStore\XDataNode.cs" />
+    <Compile Include="Data\XData\DataStore\XDataRegion.cs" />
+    <Compile Include="Data\XData\DataStore\XDataSet.cs" />
+    <Compile Include="Data\XData\DataStore\XDataStore.cs" />
+    <Compile Include="Data\XData\DataObject\XItemNodeList.cs" />
+    <Compile Include="Data\XData\DataObject\XItemList.cs" />
+    <Compile Include="Data\XData\DataObject\XItemNode.cs" />
+    <Compile Include="Data\XData\DataObject\XItemList.g.cs" />
+    <Compile Include="Integration\DTO\AuthMessage.cs" />
+    <Compile Include="Integration\DTO\ServiceMessage.cs" />
+    <Compile Include="Integration\DTO\Results\OperationResult.cs" />
+    <Compile Include="Integration\DTO\Results\ExecutionResult.cs" />
+    <Compile Include="Exceptions\DbErrorCode.cs" />
+    <Compile Include="Exceptions\OperationStatus.cs" />
+    <Compile Include="Data\XData\DataObject\IXObjectStorage.cs" />
+    <Compile Include="Data\XData\DataObject\XNodeStore.cs" />
+    <Compile Include="Data\XData\DataObject\XObject.cs" />
+    <Compile Include="Data\XData\DataObject\XObjectHelper.cs" />
+    <Compile Include="Integration\DTO\Message.cs" />
+    <Compile Include="Config\CacheConfig.cs" />
+    <Compile Include="Config\ConfigBase.cs" />
+    <Compile Include="Config\ConfigHandler.cs" />
+    <Compile Include="Config\ConfigHelper.cs" />
+    <Compile Include="Config\ConfigManager.cs" />
+    <Compile Include="Config\ConfigManagerBase.cs" />
+    <Compile Include="Config\ExceptionConfig.cs" />
+    <Compile Include="Config\ServiceConfig.cs" />
+    <Compile Include="Config\SystemConfig.cs" />
+    <Compile Include="Config\ThirdPartyConfig.cs" />
+    <Compile Include="Data\DataObject\Tag\BTag.cs" />
+    <Compile Include="Data\DataObject\Tag\ITag.cs" />
+    <Compile Include="Data\DataObject\Tag\JTag.cs" />
+    <Compile Include="Data\XData\DataObject\XItem.cs" />
+    <Compile Include="Data\XData\DataObject\XNode.cs" />
+    <Compile Include="Data\XData\DataObject\XNodeList.cs" />
+    <Compile Include="Data\XData\DataObject\XTag.cs" />
+    <Compile Include="Integration\IServiceHost.cs" />
+    <Compile Include="Data\DataObject\Repository\IDataRepository.cs" />
+    <Compile Include="Exceptions\PISInfoException.cs" />
+    <Compile Include="Exceptions\PISSysException.cs" />
+    <Compile Include="Exceptions\ErrorCode.cs" />
+    <Compile Include="Exceptions\PISDataException.cs" />
+    <Compile Include="Exceptions\PISLicException.cs" />
+    <Compile Include="Exceptions\PISSecException.cs" />
+    <Compile Include="Exceptions\PISInnException.cs" />
+    <Compile Include="Log\LogManager.cs" />
+    <Compile Include="Pattern\IEntityObject.cs" />
+    <Compile Include="Pattern\IObjectFactory.cs" />
+    <Compile Include="Pattern\UnitOfWork\DbContext.cs" />
+    <Compile Include="Pattern\UnitOfWork\IEntityContext.cs" />
+    <Compile Include="Pattern\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Pattern\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Security\Authentication\AuthException.cs" />
+    <Compile Include="Exceptions\PISException.cs" />
+    <Compile Include="Security\Authentication\AuthUser.cs" />
+    <Compile Include="Security\Authentication\ISysIdentity.cs" />
+    <Compile Include="Security\Authentication\ISysPrincipal.cs" />
+    <Compile Include="Security\Authentication\IToken.cs" />
+    <Compile Include="Testing\MockUser.cs" />
+    <Compile Include="Utilities\Consts\GlobalConsts.cs" />
+    <Compile Include="Utilities\Consts\RegularExpressions.cs" />
+    <Compile Include="Utilities\Converters\EnumStrConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Extensions\CLRExtensions.cs" />
+    <Compile Include="Utilities\Extensions\DateExtensions.cs" />
+    <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Utilities\Extensions\StringExtensions.cs" />
+    <Compile Include="Utilities\Extensions\XmlEntensions.cs" />
+    <Compile Include="Testing\TestHelper.cs" />
+    <Compile Include="Properties\CommonAssemblyInfo.cs" />
+    <Compile Include="ADT\DTreeNode.cs" />
+    <Compile Include="ADT\EasyDictionary.cs" />
+    <Compile Include="ADT\ContextBase.cs" />
+    <Compile Include="Integration\DTO\DtoBase.cs" />
+    <Compile Include="ADT\DictionaryObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Authentication\SysIdentity.cs" />
+    <Compile Include="Security\Authentication\SysPrincipal.cs" />
+    <Compile Include="Security\Cryptography\CryptoManager.cs" />
+    <Compile Include="Security\Cryptography\DESCryptoProvider.cs" />
+    <Compile Include="Security\Cryptography\ICryptoManager.cs" />
+    <Compile Include="Security\Cryptography\IHashProvider.cs" />
+    <Compile Include="Security\Cryptography\ISymmetricCryptoProvider.cs" />
+    <Compile Include="Security\Cryptography\MACTripleDESHashProvider.cs" />
+    <Compile Include="Security\Cryptography\MD5HashProvider.cs" />
+    <Compile Include="Security\UserInfo.cs" />
+    <Compile Include="Testing\CodeTimer.cs" />
+    <Compile Include="Utilities\CLRHelper.cs" />
+    <Compile Include="Utilities\StringHelper.cs" />
+    <Compile Include="Utilities\SystemHelper.cs" />
+    <Compile Include="Utilities\WebHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Serialization\Binary\" />
+    <Folder Include="Data\Serialization\Json\" />
+    <Folder Include="Data\Serialization\Soap\" />
+    <Folder Include="Data\Serialization\Xml\" />
+    <Folder Include="Globalization\" />
+    <Folder Include="Security\Authorization\" />
+    <Folder Include="Security\IP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\share\PIS.AutoEnt.Share\Resources\certs\pis.snk">
+      <Link>pis.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

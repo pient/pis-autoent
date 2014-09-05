@@ -1,0 +1,161 @@
+﻿@model PIS.AutoEnt.Web.Mvc.PortalViewModel
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+    @if (Request.IsAuthenticated)
+    {
+        <ul class="nav">
+            <li>
+                <a href="#" class="brand" style="padding:7px 5px">
+                    <img src="~/Images/Pis-Logo.png" style="height: 25px;" />
+                    @GlobalResource.SystemName
+                </a>
+            </li>
+        </ul>
+        <div style="margin-right:10px;">
+            <div class="navbar-search pull-left">
+                <input class="easyui-searchbox" style="height:25px;" data-options="prompt:'Search',searcher:doSearch" />
+            </div>
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                    <a href="#" id="app-link">
+                        <img src="~/Images/shared/thumbnails/app.png" />
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="~/Images/shared/thumbnails/info-chat.png" />
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="message-link">@GlobalResource.Message</a></li>
+                        <li><a href="#" id="task-link">@GlobalResource.Task</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" id="calendar-link">@GlobalResource.Calendar</a></li>
+                    </ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="~/Images/shared/thumbnails/setting.png" />
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="setting-link">@GlobalResource.SystemSetting</a></li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink(GlobalResource.HelpCenter, "HelpCenter", "System")</li>
+                    </ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        @Model.User.Name
+                        <img src="~/Images/shared/thumbnails/app-usr.png" />
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink(HomeResource.My_Workbench, "Index", "Home")</li>
+                        <li>@Html.ActionLink(HomeResource.My_Setting, "Index", "Home")</li>
+                        <li>@Html.ActionLink(HomeResource.My_AccountSetting, "Index", "Home")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink(HomeResource.Login_SignOut, "SignOut", "Home")</li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+        
+        <script type="text/javascript">
+            function doSearch(value) {
+                alert('You input: ' + value);
+            }
+
+            $(function () {
+                $("#setting-link").click(function () {
+                    $("#setting-modal").modal();
+                });
+
+                $("#message-link").click(function () {
+                    $("#setting-modal").modal();
+                });
+
+                $("#task-link").click(function () {
+                    $("#setting-modal").modal();
+                });
+
+                $("#calendar-link").click(function () {
+                    $("#calendar-modal").modal();
+                });
+
+                var date = new Date();
+                var d = date.getDate();
+                var m = date.getMonth();
+                var y = date.getFullYear();
+
+                $('.calendar-panel').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    editable: true,
+                    events: [
+                        {
+                            title: 'All Day Event',
+                            start: new Date(y, m, 1)
+                        },
+                        {
+                            title: 'Long Event',
+                            start: new Date(y, m, d - 5),
+                            end: new Date(y, m, d - 2)
+                        },
+                        {
+                            id: 999,
+                            title: 'Repeating Event',
+                            start: new Date(y, m, d - 3, 16, 0),
+                            allDay: false
+                        },
+                        {
+                            id: 999,
+                            title: 'Repeating Event',
+                            start: new Date(y, m, d + 4, 16, 0),
+                            allDay: false
+                        },
+                        {
+                            title: 'Meeting',
+                            start: new Date(y, m, d, 10, 30),
+                            allDay: false
+                        },
+                        {
+                            title: 'Lunch',
+                            start: new Date(y, m, d, 12, 0),
+                            end: new Date(y, m, d, 14, 0),
+                            allDay: false
+                        },
+                        {
+                            title: 'Birthday Party',
+                            start: new Date(y, m, d + 1, 19, 0),
+                            end: new Date(y, m, d + 1, 22, 30),
+                            allDay: false
+                        },
+                        {
+                            title: 'Click for Google',
+                            start: new Date(y, m, 28),
+                            end: new Date(y, m, 29),
+                            url: 'http://google.com/'
+                        }
+                    ]
+                });
+            });
+        </script>
+    }
+    else
+    {
+        <div>
+            <a class="brand" style="width:280px; padding:7px 5px">
+                <img src="~/Images/Pis-Logo.png" style="height: 25px;" />
+                @GlobalResource.SystemName
+            </a>
+        </div>
+    }
+    </div><!-- /navbar-inner -->
+</div>

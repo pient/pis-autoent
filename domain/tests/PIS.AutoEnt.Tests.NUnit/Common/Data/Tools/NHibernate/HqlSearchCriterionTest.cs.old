@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHibernate;
+using NHibernate.Criterion;
+using NUnit.Framework;
+using PIS.Framework.DataAccess;
+
+namespace PIS.Framework.Tests.Data
+{
+    [TestFixture]
+    public class HqlSearchCriterionTest
+    {
+        const string TEST_USER_ID = "46c5f4df-f6d1-4b36-96ac-d39d3dd65a5d";
+        const string TEST_USER_NAME = "admin";
+
+        [SetUp]
+        public void Setup()
+        {
+            NHibernateManager.Configure();
+        }
+    }
+}

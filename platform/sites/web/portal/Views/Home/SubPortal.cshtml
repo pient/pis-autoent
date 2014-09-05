@@ -1,0 +1,39 @@
+﻿@model PageModel
+
+@{
+}
+
+@section head{
+    <style type="text/css">
+
+    </style>
+}
+
+
+
+@section scripts{
+    <script src="~/Scripts/app/subportal.js"></script>
+
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            PISConfig.Init();
+
+            var pageCode = '@Model.PageCode';
+
+            Ext.Ajax.request({
+                url: '/api/portal/GetPageData?code=' + pageCode,
+                params: {},
+                success: function (response, opts) {
+                    var pageData = Ext.decode(response.responseText);
+
+                    Ext.create('PIS.SubPortalViewport', { pageData: pageData });
+                },
+                failure: function (response, opts) {
+                    if (response.status) {
+                        alert('请求失败,错误代码：' + response.status);
+                    }
+                }
+            });
+        });
+    </script>
+}

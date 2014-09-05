@@ -1,0 +1,1166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PisBJXZ_FrameworkModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PisBJXZ_FrameworkModelStoreContainer">
+          <EntitySet Name="OrgFunction" EntityType="PisBJXZ_FrameworkModel.Store.OrgFunction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgGroup" EntityType="PisBJXZ_FrameworkModel.Store.OrgGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgGroupAuth" EntityType="PisBJXZ_FrameworkModel.Store.OrgGroupAuth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgGroupFunction" EntityType="PisBJXZ_FrameworkModel.Store.OrgGroupFunction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgRole" EntityType="PisBJXZ_FrameworkModel.Store.OrgRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgRoleAuth" EntityType="PisBJXZ_FrameworkModel.Store.OrgRoleAuth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgRoleFunction" EntityType="PisBJXZ_FrameworkModel.Store.OrgRoleFunction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgUser" EntityType="PisBJXZ_FrameworkModel.Store.OrgUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgUserAuth" EntityType="PisBJXZ_FrameworkModel.Store.OrgUserAuth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgUserGroup" EntityType="PisBJXZ_FrameworkModel.Store.OrgUserGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgUserRole" EntityType="PisBJXZ_FrameworkModel.Store.OrgUserRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysAuth" EntityType="PisBJXZ_FrameworkModel.Store.SysAuth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysDataStructure" EntityType="PisBJXZ_FrameworkModel.Store.SysDataStructure" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysFile" EntityType="PisBJXZ_FrameworkModel.Store.SysFile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysFolder" EntityType="PisBJXZ_FrameworkModel.Store.SysFolder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysMessage" EntityType="PisBJXZ_FrameworkModel.Store.SysMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysMetadata" EntityType="PisBJXZ_FrameworkModel.Store.SysMetadata" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysModule" EntityType="PisBJXZ_FrameworkModel.Store.SysModule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysObject" EntityType="PisBJXZ_FrameworkModel.Store.SysObject" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysRegistry" EntityType="PisBJXZ_FrameworkModel.Store.SysRegistry" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId">
+            <End Role="OrgFunction" EntitySet="OrgFunction" />
+            <End Role="OrgGroup" EntitySet="OrgGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgGroupFunction_dbo_OrgFunction_FunctionId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgGroupFunction_dbo_OrgFunction_FunctionId">
+            <End Role="OrgFunction" EntitySet="OrgFunction" />
+            <End Role="OrgGroupFunction" EntitySet="OrgGroupFunction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgGroupFunction_dbo_OrgGroup_GroupId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgGroupFunction_dbo_OrgGroup_GroupId">
+            <End Role="OrgGroup" EntitySet="OrgGroup" />
+            <End Role="OrgGroupFunction" EntitySet="OrgGroupFunction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId">
+            <End Role="OrgFunction" EntitySet="OrgFunction" />
+            <End Role="OrgRole" EntitySet="OrgRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgRoleFunction_dbo_OrgFunction_RoleId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgRoleFunction_dbo_OrgFunction_RoleId">
+            <End Role="OrgFunction" EntitySet="OrgFunction" />
+            <End Role="OrgRoleFunction" EntitySet="OrgRoleFunction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgRoleFunction_dbo_OrgRole_FunctionId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgRoleFunction_dbo_OrgRole_FunctionId">
+            <End Role="OrgRole" EntitySet="OrgRole" />
+            <End Role="OrgRoleFunction" EntitySet="OrgRoleFunction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgUserGroup_dbo_OrgGroup_GroupId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgUserGroup_dbo_OrgGroup_GroupId">
+            <End Role="OrgGroup" EntitySet="OrgGroup" />
+            <End Role="OrgUserGroup" EntitySet="OrgUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgUserGroup_dbo_OrgUser_UserId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgUserGroup_dbo_OrgUser_UserId">
+            <End Role="OrgUser" EntitySet="OrgUser" />
+            <End Role="OrgUserGroup" EntitySet="OrgUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgUserRole_dbo_OrgRole_RoleId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgUserRole_dbo_OrgRole_RoleId">
+            <End Role="OrgRole" EntitySet="OrgRole" />
+            <End Role="OrgUserRole" EntitySet="OrgUserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgUserRole_dbo_OrgUser_UserId" Association="PisBJXZ_FrameworkModel.Store.FK_dbo_OrgUserRole_dbo_OrgUser_UserId">
+            <End Role="OrgUser" EntitySet="OrgUser" />
+            <End Role="OrgUserRole" EntitySet="OrgUserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgGroupAuth_OrgGroup" Association="PisBJXZ_FrameworkModel.Store.FK_OrgGroupAuth_OrgGroup">
+            <End Role="OrgGroup" EntitySet="OrgGroup" />
+            <End Role="OrgGroupAuth" EntitySet="OrgGroupAuth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgGroupAuth_SysAuth" Association="PisBJXZ_FrameworkModel.Store.FK_OrgGroupAuth_SysAuth">
+            <End Role="SysAuth" EntitySet="SysAuth" />
+            <End Role="OrgGroupAuth" EntitySet="OrgGroupAuth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgRoleAuth_OrgRole" Association="PisBJXZ_FrameworkModel.Store.FK_OrgRoleAuth_OrgRole">
+            <End Role="OrgRole" EntitySet="OrgRole" />
+            <End Role="OrgRoleAuth" EntitySet="OrgRoleAuth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgRoleAuth_SysAuth" Association="PisBJXZ_FrameworkModel.Store.FK_OrgRoleAuth_SysAuth">
+            <End Role="SysAuth" EntitySet="SysAuth" />
+            <End Role="OrgRoleAuth" EntitySet="OrgRoleAuth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgUserAuth_OrgUser" Association="PisBJXZ_FrameworkModel.Store.FK_OrgUserAuth_OrgUser">
+            <End Role="OrgUser" EntitySet="OrgUser" />
+            <End Role="OrgUserAuth" EntitySet="OrgUserAuth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgUserAuth_SysAuth" Association="PisBJXZ_FrameworkModel.Store.FK_OrgUserAuth_SysAuth">
+            <End Role="SysAuth" EntitySet="SysAuth" />
+            <End Role="OrgUserAuth" EntitySet="OrgUserAuth" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="OrgFunction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MainFunctionId" Type="uniqueidentifier" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgGroupAuth">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="AuthId" />
+          </Key>
+          <Property Name="GroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AuthId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgGroupFunction">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="FunctionId" />
+          </Key>
+          <Property Name="GroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FunctionId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MainFunctionId" Type="uniqueidentifier" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgRoleAuth">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="AuthId" />
+          </Key>
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AuthId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgRoleFunction">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="FunctionId" />
+          </Key>
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FunctionId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LoginName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgUserAuth">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="AuthId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AuthId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgUserGroup">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysAuth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AuthObjId" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="IsPublic" Type="bit" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysDataStructure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ObjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StructureCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SortIndex" Type="int" />
+          <Property Name="ParentId" Type="uniqueidentifier" />
+          <Property Name="PathLevel" Type="int" />
+          <Property Name="Path" Type="nvarchar(max)" />
+          <Property Name="IsLeaf" Type="bit" />
+        </EntityType>
+        <EntityType Name="SysFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FolderId" Type="uniqueidentifier" />
+          <Property Name="Name" Type="varchar" MaxLength="300" />
+          <Property Name="ExtName" Type="varchar" MaxLength="50" />
+          <Property Name="FileSize" Type="bigint" />
+          <Property Name="Path" Type="varchar" MaxLength="500" />
+          <Property Name="Description" Type="varchar" MaxLength="5000" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysFolder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="Description" Type="varchar" MaxLength="5000" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="SysType" Type="varchar" MaxLength="50" />
+          <Property Name="Catalog" Type="varchar" MaxLength="150" />
+          <Property Name="Subject" Type="varchar" MaxLength="500" />
+          <Property Name="Content" Type="text" />
+          <Property Name="Important" Type="int" />
+          <Property Name="MessageChain" Type="varchar" MaxLength="5000" />
+          <Property Name="Attachments" Type="varchar" MaxLength="1500" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="SentDate" Type="datetime" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysMetadata">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DomainId" Type="uniqueidentifier" />
+          <Property Name="ObjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ObjectCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DefStructureCode" Type="varchar" MaxLength="50" />
+          <Property Name="CNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="OwnerType" Type="int" Nullable="false" />
+          <Property Name="OwnerId" Type="nvarchar" MaxLength="50" />
+          <Property Name="OwnerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SecurityLevel" Type="int" Nullable="false" />
+          <Property Name="Version" Type="int" />
+          <Property Name="XMetaTag" Type="xml" />
+          <Property Name="CreatedTime" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SysModule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="FuncCode" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="IsPublic" Type="bit" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Icon" Type="varchar" MaxLength="150" />
+          <Property Name="MdlPath" Type="varchar" MaxLength="500" />
+          <Property Name="Description" Type="varchar" MaxLength="5000" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysObject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Attachments" Type="nvarchar(max)" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+          <Property Name="XTag" Type="xml" />
+          <Property Name="BTag" Type="varbinary(max)" />
+          <Property Name="XData" Type="xml" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysRegistry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssemblyType" Type="nvarchar" MaxLength="150" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="1500" />
+          <Property Name="BData" Type="varbinary(max)" />
+          <Property Name="XData" Type="xml" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="MetadataId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId">
+          <End Role="OrgFunction" Type="PisBJXZ_FrameworkModel.Store.OrgFunction" Multiplicity="0..1" />
+          <End Role="OrgGroup" Type="PisBJXZ_FrameworkModel.Store.OrgGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgGroup">
+              <PropertyRef Name="MainFunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgGroupFunction_dbo_OrgFunction_FunctionId">
+          <End Role="OrgFunction" Type="PisBJXZ_FrameworkModel.Store.OrgFunction" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgGroupFunction" Type="PisBJXZ_FrameworkModel.Store.OrgGroupFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgGroupFunction">
+              <PropertyRef Name="FunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgGroupFunction_dbo_OrgGroup_GroupId">
+          <End Role="OrgGroup" Type="PisBJXZ_FrameworkModel.Store.OrgGroup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgGroupFunction" Type="PisBJXZ_FrameworkModel.Store.OrgGroupFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgGroupFunction">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId">
+          <End Role="OrgFunction" Type="PisBJXZ_FrameworkModel.Store.OrgFunction" Multiplicity="0..1" />
+          <End Role="OrgRole" Type="PisBJXZ_FrameworkModel.Store.OrgRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgRole">
+              <PropertyRef Name="MainFunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgRoleFunction_dbo_OrgFunction_RoleId">
+          <End Role="OrgFunction" Type="PisBJXZ_FrameworkModel.Store.OrgFunction" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgRoleFunction" Type="PisBJXZ_FrameworkModel.Store.OrgRoleFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgRoleFunction">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgRoleFunction_dbo_OrgRole_FunctionId">
+          <End Role="OrgRole" Type="PisBJXZ_FrameworkModel.Store.OrgRole" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgRoleFunction" Type="PisBJXZ_FrameworkModel.Store.OrgRoleFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgRoleFunction">
+              <PropertyRef Name="FunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgUserGroup_dbo_OrgGroup_GroupId">
+          <End Role="OrgGroup" Type="PisBJXZ_FrameworkModel.Store.OrgGroup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgUserGroup" Type="PisBJXZ_FrameworkModel.Store.OrgUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgUserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgUserGroup_dbo_OrgUser_UserId">
+          <End Role="OrgUser" Type="PisBJXZ_FrameworkModel.Store.OrgUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgUserGroup" Type="PisBJXZ_FrameworkModel.Store.OrgUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgUserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgUserRole_dbo_OrgRole_RoleId">
+          <End Role="OrgRole" Type="PisBJXZ_FrameworkModel.Store.OrgRole" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgUserRole" Type="PisBJXZ_FrameworkModel.Store.OrgUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgUserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgUserRole_dbo_OrgUser_UserId">
+          <End Role="OrgUser" Type="PisBJXZ_FrameworkModel.Store.OrgUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrgUserRole" Type="PisBJXZ_FrameworkModel.Store.OrgUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgGroupAuth_OrgGroup">
+          <End Role="OrgGroup" Type="PisBJXZ_FrameworkModel.Store.OrgGroup" Multiplicity="1" />
+          <End Role="OrgGroupAuth" Type="PisBJXZ_FrameworkModel.Store.OrgGroupAuth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgGroupAuth">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgGroupAuth_SysAuth">
+          <End Role="SysAuth" Type="PisBJXZ_FrameworkModel.Store.SysAuth" Multiplicity="1" />
+          <End Role="OrgGroupAuth" Type="PisBJXZ_FrameworkModel.Store.OrgGroupAuth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysAuth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgGroupAuth">
+              <PropertyRef Name="AuthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgRoleAuth_OrgRole">
+          <End Role="OrgRole" Type="PisBJXZ_FrameworkModel.Store.OrgRole" Multiplicity="1" />
+          <End Role="OrgRoleAuth" Type="PisBJXZ_FrameworkModel.Store.OrgRoleAuth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgRoleAuth">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgRoleAuth_SysAuth">
+          <End Role="SysAuth" Type="PisBJXZ_FrameworkModel.Store.SysAuth" Multiplicity="1" />
+          <End Role="OrgRoleAuth" Type="PisBJXZ_FrameworkModel.Store.OrgRoleAuth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysAuth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgRoleAuth">
+              <PropertyRef Name="AuthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgUserAuth_OrgUser">
+          <End Role="OrgUser" Type="PisBJXZ_FrameworkModel.Store.OrgUser" Multiplicity="1" />
+          <End Role="OrgUserAuth" Type="PisBJXZ_FrameworkModel.Store.OrgUserAuth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgUserAuth">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgUserAuth_SysAuth">
+          <End Role="SysAuth" Type="PisBJXZ_FrameworkModel.Store.SysAuth" Multiplicity="1" />
+          <End Role="OrgUserAuth" Type="PisBJXZ_FrameworkModel.Store.OrgUserAuth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysAuth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgUserAuth">
+              <PropertyRef Name="AuthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PisBJXZ_FrameworkModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PISFrameworkEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="OrgFunctions" EntityType="PisBJXZ_FrameworkModel.OrgFunction" />
+          <EntitySet Name="OrgGroups" EntityType="PisBJXZ_FrameworkModel.OrgGroup" />
+          <EntitySet Name="OrgRoles" EntityType="PisBJXZ_FrameworkModel.OrgRole" />
+          <EntitySet Name="OrgUsers" EntityType="PisBJXZ_FrameworkModel.OrgUser" />
+          <EntitySet Name="SysFiles" EntityType="PisBJXZ_FrameworkModel.SysFile" />
+          <EntitySet Name="SysFolders" EntityType="PisBJXZ_FrameworkModel.SysFolder" />
+          <EntitySet Name="SysMessages" EntityType="PisBJXZ_FrameworkModel.SysMessage" />
+          <EntitySet Name="SysMetadatas" EntityType="PisBJXZ_FrameworkModel.SysMetadata" />
+          <EntitySet Name="SysModules" EntityType="PisBJXZ_FrameworkModel.SysModule" />
+          <EntitySet Name="SysObjects" EntityType="PisBJXZ_FrameworkModel.SysObject" />
+          <AssociationSet Name="FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId" Association="PisBJXZ_FrameworkModel.FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId">
+            <End Role="OrgFunction" EntitySet="OrgFunctions" />
+            <End Role="OrgGroup" EntitySet="OrgGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId" Association="PisBJXZ_FrameworkModel.FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId">
+            <End Role="OrgFunction" EntitySet="OrgFunctions" />
+            <End Role="OrgRole" EntitySet="OrgRoles" />
+          </AssociationSet>
+          <AssociationSet Name="OrgGroupFunction" Association="PisBJXZ_FrameworkModel.OrgGroupFunction">
+            <End Role="OrgFunction" EntitySet="OrgFunctions" />
+            <End Role="OrgGroup" EntitySet="OrgGroups" />
+          </AssociationSet>
+          <AssociationSet Name="OrgRoleFunction" Association="PisBJXZ_FrameworkModel.OrgRoleFunction">
+            <End Role="OrgFunction" EntitySet="OrgFunctions" />
+            <End Role="OrgRole" EntitySet="OrgRoles" />
+          </AssociationSet>
+          <AssociationSet Name="OrgUserGroup" Association="PisBJXZ_FrameworkModel.OrgUserGroup">
+            <End Role="OrgGroup" EntitySet="OrgGroups" />
+            <End Role="OrgUser" EntitySet="OrgUsers" />
+          </AssociationSet>
+          <AssociationSet Name="OrgUserRole" Association="PisBJXZ_FrameworkModel.OrgUserRole">
+            <End Role="OrgRole" EntitySet="OrgRoles" />
+            <End Role="OrgUser" EntitySet="OrgUsers" />
+          </AssociationSet>
+          <EntitySet Name="SysRegistries" EntityType="PisBJXZ_FrameworkModel.SysRegistry" />
+          <EntitySet Name="SysDataStructures" EntityType="PisBJXZ_FrameworkModel.SysDataStructure" />
+          <EntitySet Name="SysAuths" EntityType="PisBJXZ_FrameworkModel.SysAuth" />
+          <AssociationSet Name="OrgUserAuth" Association="PisBJXZ_FrameworkModel.OrgUserAuth">
+            <End Role="OrgUser" EntitySet="OrgUsers" />
+            <End Role="SysAuth" EntitySet="SysAuths" />
+          </AssociationSet>
+          <AssociationSet Name="OrgGroupAuth" Association="PisBJXZ_FrameworkModel.OrgGroupAuth">
+            <End Role="OrgGroup" EntitySet="OrgGroups" />
+            <End Role="SysAuth" EntitySet="SysAuths" />
+          </AssociationSet>
+          <AssociationSet Name="OrgRoleAuth" Association="PisBJXZ_FrameworkModel.OrgRoleAuth">
+            <End Role="OrgRole" EntitySet="OrgRoles" />
+            <End Role="SysAuth" EntitySet="SysAuths" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="OrgFunction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+          <NavigationProperty Name="OrgGroups" Relationship="PisBJXZ_FrameworkModel.FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId" FromRole="OrgFunction" ToRole="OrgGroup" />
+          <NavigationProperty Name="OrgRoles" Relationship="PisBJXZ_FrameworkModel.FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId" FromRole="OrgFunction" ToRole="OrgRole" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OrgGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="MainFunctionId" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+          <NavigationProperty Name="MainFunction" Relationship="PisBJXZ_FrameworkModel.FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId" FromRole="OrgGroup" ToRole="OrgFunction" />
+          <NavigationProperty Name="OrgFunctions" Relationship="PisBJXZ_FrameworkModel.OrgGroupFunction" FromRole="OrgGroup" ToRole="OrgFunction" />
+          <NavigationProperty Name="OrgUsers" Relationship="PisBJXZ_FrameworkModel.OrgUserGroup" FromRole="OrgGroup" ToRole="OrgUser" />
+          <NavigationProperty Name="SysAuths" Relationship="PisBJXZ_FrameworkModel.OrgGroupAuth" FromRole="OrgGroup" ToRole="SysAuth" />
+        </EntityType>
+        <EntityType Name="OrgRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="MainFunctionId" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+          <NavigationProperty Name="OrgFunction" Relationship="PisBJXZ_FrameworkModel.FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId" FromRole="OrgRole" ToRole="OrgFunction" />
+          <NavigationProperty Name="OrgFunctions" Relationship="PisBJXZ_FrameworkModel.OrgRoleFunction" FromRole="OrgRole" ToRole="OrgFunction" />
+          <NavigationProperty Name="OrgUsers" Relationship="PisBJXZ_FrameworkModel.OrgUserRole" FromRole="OrgRole" ToRole="OrgUser" />
+          <NavigationProperty Name="SysAuths" Relationship="PisBJXZ_FrameworkModel.OrgRoleAuth" FromRole="OrgRole" ToRole="SysAuth" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OrgUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+          <NavigationProperty Name="OrgGroups" Relationship="PisBJXZ_FrameworkModel.OrgUserGroup" FromRole="OrgUser" ToRole="OrgGroup" />
+          <NavigationProperty Name="OrgRoles" Relationship="PisBJXZ_FrameworkModel.OrgUserRole" FromRole="OrgUser" ToRole="OrgRole" />
+          <NavigationProperty Name="SysAuths" Relationship="PisBJXZ_FrameworkModel.OrgUserAuth" FromRole="OrgUser" ToRole="SysAuth" />
+          <Property Type="String" Name="LoginName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SysFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="FolderId" />
+          <Property Type="String" Name="Name" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ExtName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="FileSize" />
+          <Property Type="String" Name="Path" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysFolder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SysType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Catalog" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Subject" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Important" />
+          <Property Type="String" Name="MessageChain" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Attachments" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="SentDate" Precision="3" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysMetadata">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="DomainId" />
+          <Property Type="Guid" Name="ObjectId" Nullable="false" />
+          <Property Type="String" Name="ObjectCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="OwnerType" Nullable="false" />
+          <Property Type="String" Name="OwnerId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OwnerName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SecurityLevel" Nullable="false" />
+          <Property Type="Int32" Name="Version" />
+          <Property Type="String" Name="XMetaTag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedTime" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="LastModifiedTime" Precision="3" />
+          <Property Type="String" Name="DefStructureCode" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SysModule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FuncCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPublic" />
+          <Property Type="String" Name="Icon" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+          <Property Type="String" Name="MdlPath" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SysObject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Attachments" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Memo" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="XTag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="BTag" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="XData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_OrgGroup_dbo_OrgFunction_MainFunctionId">
+          <End Type="PisBJXZ_FrameworkModel.OrgFunction" Role="OrgFunction" Multiplicity="0..1" />
+          <End Type="PisBJXZ_FrameworkModel.OrgGroup" Role="OrgGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgGroup">
+              <PropertyRef Name="MainFunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrgRole_dbo_OrgFunction_MainFunctionId">
+          <End Type="PisBJXZ_FrameworkModel.OrgFunction" Role="OrgFunction" Multiplicity="0..1" />
+          <End Type="PisBJXZ_FrameworkModel.OrgRole" Role="OrgRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrgRole">
+              <PropertyRef Name="MainFunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrgGroupFunction">
+          <End Type="PisBJXZ_FrameworkModel.OrgFunction" Role="OrgFunction" Multiplicity="*" />
+          <End Type="PisBJXZ_FrameworkModel.OrgGroup" Role="OrgGroup" Multiplicity="*" />
+        </Association>
+        <Association Name="OrgRoleFunction">
+          <End Type="PisBJXZ_FrameworkModel.OrgFunction" Role="OrgFunction" Multiplicity="*" />
+          <End Type="PisBJXZ_FrameworkModel.OrgRole" Role="OrgRole" Multiplicity="*" />
+        </Association>
+        <Association Name="OrgUserGroup">
+          <End Type="PisBJXZ_FrameworkModel.OrgGroup" Role="OrgGroup" Multiplicity="*" />
+          <End Type="PisBJXZ_FrameworkModel.OrgUser" Role="OrgUser" Multiplicity="*" />
+        </Association>
+        <Association Name="OrgUserRole">
+          <End Type="PisBJXZ_FrameworkModel.OrgRole" Role="OrgRole" Multiplicity="*" />
+          <End Type="PisBJXZ_FrameworkModel.OrgUser" Role="OrgUser" Multiplicity="*" />
+        </Association>
+        <EntityType Name="SysRegistry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="XData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+          <Property Type="String" Name="AssemblyType" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="BData" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SysDataStructure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="ObjectId" Nullable="false" />
+          <Property Type="String" Name="StructureCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="SortIndex" />
+          <Property Type="Guid" Name="ParentId" />
+          <Property Type="Int32" Name="PathLevel" />
+          <Property Type="String" Name="Path" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsLeaf" />
+        </EntityType>
+        <EntityType Name="SysAuth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="AuthObjId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPublic" />
+          <Property Type="String" Name="Tag" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="MetadataId" Nullable="false" />
+          <NavigationProperty Name="OrgUsers" Relationship="PisBJXZ_FrameworkModel.OrgUserAuth" FromRole="SysAuth" ToRole="OrgUser" />
+          <NavigationProperty Name="OrgGroups" Relationship="PisBJXZ_FrameworkModel.OrgGroupAuth" FromRole="SysAuth" ToRole="OrgGroup" />
+          <NavigationProperty Name="OrgRoles" Relationship="PisBJXZ_FrameworkModel.OrgRoleAuth" FromRole="SysAuth" ToRole="OrgRole" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="OrgUserAuth">
+          <End Type="PisBJXZ_FrameworkModel.OrgUser" Role="OrgUser" Multiplicity="*" />
+          <End Type="PisBJXZ_FrameworkModel.SysAuth" Role="SysAuth" Multiplicity="*" />
+        </Association>
+        <Association Name="OrgGroupAuth">
+          <End Type="PisBJXZ_FrameworkModel.OrgGroup" Role="OrgGroup" Multiplicity="*" />
+          <End Type="PisBJXZ_FrameworkModel.SysAuth" Role="SysAuth" Multiplicity="*" />
+        </Association>
+        <Association Name="OrgRoleAuth">
+          <End Type="PisBJXZ_FrameworkModel.OrgRole" Role="OrgRole" Multiplicity="*" />
+          <End Type="PisBJXZ_FrameworkModel.SysAuth" Role="SysAuth" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PisBJXZ_FrameworkModelStoreContainer" CdmEntityContainer="PISFrameworkEntities">
+          <EntitySetMapping Name="OrgFunctions">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.OrgFunction">
+              <MappingFragment StoreEntitySet="OrgFunction">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrgGroups">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.OrgGroup">
+              <MappingFragment StoreEntitySet="OrgGroup">
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="MainFunctionId" ColumnName="MainFunctionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrgRoles">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.OrgRole">
+              <MappingFragment StoreEntitySet="OrgRole">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="MainFunctionId" ColumnName="MainFunctionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrgUsers">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.OrgUser">
+              <MappingFragment StoreEntitySet="OrgUser">
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysFiles">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysFile">
+              <MappingFragment StoreEntitySet="SysFile">
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="ExtName" ColumnName="ExtName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysFolders">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysFolder">
+              <MappingFragment StoreEntitySet="SysFolder">
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysMessages">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysMessage">
+              <MappingFragment StoreEntitySet="SysMessage">
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="MessageChain" ColumnName="MessageChain" />
+                <ScalarProperty Name="Important" ColumnName="Important" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+                <ScalarProperty Name="SysType" ColumnName="SysType" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysMetadatas">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysMetadata">
+              <MappingFragment StoreEntitySet="SysMetadata">
+                <ScalarProperty Name="DefStructureCode" ColumnName="DefStructureCode" />
+                <ScalarProperty Name="LastModifiedTime" ColumnName="LastModifiedTime" />
+                <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+                <ScalarProperty Name="XMetaTag" ColumnName="XMetaTag" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="SecurityLevel" ColumnName="SecurityLevel" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="OwnerType" ColumnName="OwnerType" />
+                <ScalarProperty Name="CNumber" ColumnName="CNumber" />
+                <ScalarProperty Name="ObjectCode" ColumnName="ObjectCode" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="DomainId" ColumnName="DomainId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysModules">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysModule">
+              <MappingFragment StoreEntitySet="SysModule">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MdlPath" ColumnName="MdlPath" />
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FuncCode" ColumnName="FuncCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysObjects">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysObject">
+              <MappingFragment StoreEntitySet="SysObject">
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="XData" ColumnName="XData" />
+                <ScalarProperty Name="BTag" ColumnName="BTag" />
+                <ScalarProperty Name="XTag" ColumnName="XTag" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="OrgGroupFunction" TypeName="PisBJXZ_FrameworkModel.OrgGroupFunction" StoreEntitySet="OrgGroupFunction">
+            <EndProperty Name="OrgGroup">
+              <ScalarProperty Name="Id" ColumnName="GroupId" />
+            </EndProperty>
+            <EndProperty Name="OrgFunction">
+              <ScalarProperty Name="Id" ColumnName="FunctionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="OrgRoleFunction" TypeName="PisBJXZ_FrameworkModel.OrgRoleFunction" StoreEntitySet="OrgRoleFunction">
+            <EndProperty Name="OrgRole">
+              <ScalarProperty Name="Id" ColumnName="FunctionId" />
+            </EndProperty>
+            <EndProperty Name="OrgFunction">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="OrgUserGroup" TypeName="PisBJXZ_FrameworkModel.OrgUserGroup" StoreEntitySet="OrgUserGroup">
+            <EndProperty Name="OrgUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="OrgGroup">
+              <ScalarProperty Name="Id" ColumnName="GroupId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="OrgUserRole" TypeName="PisBJXZ_FrameworkModel.OrgUserRole" StoreEntitySet="OrgUserRole">
+            <EndProperty Name="OrgUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="OrgRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="SysRegistries">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysRegistry">
+              <MappingFragment StoreEntitySet="SysRegistry">
+                <ScalarProperty Name="BData" ColumnName="BData" />
+                <ScalarProperty Name="AssemblyType" ColumnName="AssemblyType" />
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="XData" ColumnName="XData" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysDataStructures">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysDataStructure">
+              <MappingFragment StoreEntitySet="SysDataStructure">
+                <ScalarProperty Name="IsLeaf" ColumnName="IsLeaf" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="PathLevel" ColumnName="PathLevel" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="StructureCode" ColumnName="StructureCode" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysAuths">
+            <EntityTypeMapping TypeName="PisBJXZ_FrameworkModel.SysAuth">
+              <MappingFragment StoreEntitySet="SysAuth">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MetadataId" ColumnName="MetadataId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="AuthObjId" ColumnName="AuthObjId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="OrgUserAuth" TypeName="PisBJXZ_FrameworkModel.OrgUserAuth" StoreEntitySet="OrgUserAuth">
+            <EndProperty Name="SysAuth">
+              <ScalarProperty Name="Id" ColumnName="AuthId" />
+            </EndProperty>
+            <EndProperty Name="OrgUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="OrgGroupAuth" TypeName="PisBJXZ_FrameworkModel.OrgGroupAuth" StoreEntitySet="OrgGroupAuth">
+            <EndProperty Name="SysAuth">
+              <ScalarProperty Name="Id" ColumnName="AuthId" />
+            </EndProperty>
+            <EndProperty Name="OrgGroup">
+              <ScalarProperty Name="Id" ColumnName="GroupId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="OrgRoleAuth" TypeName="PisBJXZ_FrameworkModel.OrgRoleAuth" StoreEntitySet="OrgRoleAuth">
+            <EndProperty Name="SysAuth">
+              <ScalarProperty Name="Id" ColumnName="AuthId" />
+            </EndProperty>
+            <EndProperty Name="OrgRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

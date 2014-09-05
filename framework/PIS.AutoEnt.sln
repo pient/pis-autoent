@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIS.Core", "src\PIS.Core\PIS.Core.csproj", "{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIS.Core.Tests", "tests\PIS.Core.Tests\PIS.Core.Tests.csproj", "{889FE78B-EEA3-42C1-BC7A-E2200D131C8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B15DAE-BE55-4DF8-A89B-B4C842FBFAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889FE78B-EEA3-42C1-BC7A-E2200D131C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889FE78B-EEA3-42C1-BC7A-E2200D131C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889FE78B-EEA3-42C1-BC7A-E2200D131C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889FE78B-EEA3-42C1-BC7A-E2200D131C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

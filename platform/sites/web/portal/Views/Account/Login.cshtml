@@ -1,0 +1,144 @@
+﻿@model PIS.AutoEnt.Portal.Models.Account.LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>@GlobalResource.SystemName</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        <link href="~/Content/themes/base/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+        <style type="text/css">
+	        td img {display: block; }
+	    
+	        body{
+	            margin:0;
+	            padding-top:30px;
+	            text-align:center;
+	            font-size:12px;
+	            font-family:Arial, Helvetica, sans-serif,'宋体';
+                background: #cfd6dc;
+            }
+        	
+	        #main{
+	        }
+
+            #mainTable
+            {
+	            background: url(../images/portal/main_bg.jpg) repeat-x 0 0 #cfd6dc;
+                border: 0px;
+            }
+
+            #mainTable td{
+                padding:0px;
+	        }
+	    
+	        .text-input
+	        {
+	            border:solid 1px #8FAACF;
+	        }
+	    
+	        .lbl-message
+	        {
+	            color:Red;
+	        }
+
+            .divider
+            {
+                border: 1px solid #2672ec;
+            }
+    	
+        </style>
+
+    </head>
+    <body>
+    <div id="main" style="vertical-align:middle;" align="center">
+         
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    <table id="mainTable">
+        <tr>
+        <td>
+            <div style="padding:10px; padding-left:20px; padding-right:20px;">
+            <table id="innerTable" style="height:260px;" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+               <td style="width:450px;" align="center">
+                    <div id="header" style="margin:20px; height:50px;" >
+                        <div style="font-size:29px; font-weight:bold; font-style:italic; white-space:nowrap;">
+                            @GlobalResource.SystemName
+                        </div>
+                    </div>
+                   <img src="~/images/portal/login/login_bg.jpg" style="width:350px;" />
+                   <div style="height:70px; width:330px; padding:10px; background-color:#2672ec; color:White">
+                        @HomeResource.Login_YourAccount
+                   </div>
+                   <br /><br />
+                </td>
+                <td style="width:60px;">&nbsp;</td>
+                <td align="left" style="width:260px;" >
+                    <div class="control-group">
+                        <h2>@HomeResource.Login_Login</h2>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.UserName, HomeResource.Login_UserName, new { @class = "control-label", @for = "UserName" })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.UserName, new { @placeholder = HomeResource.Login_UserName })
+                            <span class="text-error">@Html.ValidationMessageFor(m => m.UserName)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.Password, HomeResource.Login_Password, new { @class = "control-label", @for = "Password" })
+                        <div class="controls">
+                            @Html.PasswordFor(m => m.Password, new { @placeholder = HomeResource.Login_Password, @value = Model.Password })
+                            <span class="text-error">@Html.ValidationMessageFor(m => m.Password)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberName)
+                            @HomeResource.Login_RememberName
+                        </label>
+                        <label class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberPwd)
+                            @HomeResource.Login_RememberPwd
+                        </label>
+                    </div>
+                    <div class="control-group">
+                        <button type="submit" class="btn btn-primary">@HomeResource.Login_Login</button>
+                        <span id="spanForgotPwd" style="margin-left:15px;">@HomeResource.Login_ForgotPwd</span>
+                    </div>
+                    <div class="text-error">
+                        @Html.ValidationSummary(true)
+                        <span id="span-loading" style="display:none;">
+                            <img src="~/images/portal/loading.gif" />
+                        </span>
+                        <br />
+                    </div>
+               </td>
+              </tr>
+              <tr>
+                <td colspan=3>
+                    <hr class="divider" />
+                    <!--<span style="float:left">©2012 PIS</span>-->
+                    @Html.Partial("_Footer")
+                </td>
+              </tr>
+            </table>
+            </div>
+        </td>
+        </tr>
+        </table>
+}
+        </div>
+
+        <script type="text/javascript">
+
+        </script>
+    </body>
+</html>
